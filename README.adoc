@@ -1,15 +1,15 @@
-= Jenkins Infra on Digital Ocean
+= Fastly
 :toc:
 :private_repo_name: terraform-states
 :private_repo_url: https://github.com/jenkins-infra/{private_repo_name}
 :shared_tools_repo_name: shared-tools
 :shared_tools_repo_url: https://github.com/jenkins-infra/{shared_tools_repo_name}
 
-This repository hosts the infrastructure-as-code definition for all the link:https://www.digitalocean.com/[Digital Ocean] resources for the link:https://www.jenkins.io/projects/infrastructure/[Jenkins Infrastructure Project].
+This repository hosts the infrastructure-as-code definition for all the link:https://www.fastly.com/[Fastly] resources for the link:https://www.jenkins.io/projects/infrastructure/[Jenkins Infrastructure Project].
 
 == Requirements
 
-* A Digital Ocean account with a personal access token defined as the value of the environment variable `TF_VAR_do_token`
+* A Fastly account with a personal access token defined as the value of the environment variable `FASTLY_API_KEY`
 * The requirements (of the shared tools) listed at link:{shared_tools_repo_url}/tree/main/terraform#requirements[{shared_tools_repo_name}/terraform#requirements]
 * The link:https://www.terraform.io/docs/language/settings/backends/s3.html[Terraform S3 Backend Configuration] on a local file named `backend-config`:
 ** The content can be retrieved from the outputs of the link:{private_repo_url}[(private) repository {private_repo_name}]
