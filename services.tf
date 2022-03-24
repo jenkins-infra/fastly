@@ -230,9 +230,11 @@ resource "fastly_service_vcl" "stories" {
   name           = "stories.jenkins.io"
   activate       = true
   stale_if_error = true
+
   domain {
     name = "stories.jenkins.io"
   }
+
   backend {
     address               = "jenkins-is-the-way.netlify.app"
     auto_loadbalance      = false
@@ -300,4 +302,9 @@ resource "fastly_service_vcl" "stories" {
     source        = "\"max-age=31557600\""
     type          = "response"
   }
+}
+
+resource "fastly_tls_subscription" "stories" {
+  domains = [for domain in fastly_service_vcl.stories.domain : domain.name]
+  certificate_authority = "lets-encrypt"
 }
