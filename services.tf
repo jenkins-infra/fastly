@@ -243,6 +243,7 @@ resource "fastly_service_vcl" "stories" {
     healthcheck           = "stories site"
     max_conn              = 200
     name                  = "jenkins-is-the-way.netlify.app"
+    override_host         = "jenkins-is-the-way.netlify.app"
     port                  = 443
     ssl_cert_hostname     = "jenkins-is-the-way.netlify.app"
     ssl_check_cert        = true
