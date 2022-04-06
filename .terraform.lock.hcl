@@ -2,10 +2,10 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/fastly/fastly" {
-  version     = "1.1.2"
-  constraints = ">= 1.1.1"
+  version = "1.1.2"
   hashes = [
     "h1:nJtmeEQeK1f408u+jHxzNwuvtZO0AwwZJiLz1GUW5+s=",
+    "h1:wNm366YVjvX98HTTegOi1mQ/83v0Y8QSHMgK5MXTUE0=",
     "zh:034c25da91645ddd8e845ef387344762292f879d52c9068757712b12c3e7253b",
     "zh:0649c0c294b0f304d86143c35b561ab4ab9c077c5d04a2349ee5f592a265a56c",
     "zh:12f1feb514321118a3d9623588cc2c4ffcfb0ce396dd4938ca208ee19b954f3c",
@@ -25,6 +25,7 @@ provider "registry.terraform.io/fastly/fastly" {
 provider "registry.terraform.io/hashicorp/local" {
   version = "2.2.2"
   hashes = [
+    "h1:5UYW2wJ320IggrzLt8tLD6MowePqycWtH1b2RInHZkE=",
     "h1:SjDyZXIUHEQzZe10VjhlhZq2a9kgQB6tmqJcpq2BeWg=",
     "zh:027e4873c69da214e2fed131666d5de92089732a11d096b68257da54d30b6f9d",
     "zh:0ba2216e16cfb72538d76a4c4945b4567a76f7edbfef926b1c5a08d7bba2a043",
