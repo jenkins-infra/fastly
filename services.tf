@@ -112,6 +112,7 @@ resource "fastly_service_vcl" "pkg" {
     ssl_sni_hostname      = "pkg.origin.jenkins.io"
     use_ssl               = true
     weight                = 100
+    override_host         = "pkg.origin.jenkins.io" # Avoid AH02032 (SNI set to "pkg.origin.jenkins.io" but host set to "pkg.jenkins.io")
   }
 
   healthcheck {
