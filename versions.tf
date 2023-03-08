@@ -4,8 +4,5 @@ terraform {
     fastly = {
       source = "fastly/fastly"
     }
-    local = {
-      source = "hashicorp/local"
-    }
   }
 }
