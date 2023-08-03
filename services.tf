@@ -14,7 +14,7 @@ resource "fastly_service_vcl" "jenkinsio" {
     connect_timeout       = 1000
     error_threshold       = 0
     first_byte_timeout    = 15000
-    healthcheck           = "public.aks.jenkins.io"
+    healthcheck           = "public.publick8s.jenkins.io"
     max_conn              = 200
     name                  = "www.origin.jenkins.io"
     port                  = 443
@@ -32,7 +32,7 @@ resource "fastly_service_vcl" "jenkinsio" {
     http_version      = "1.1"
     initial           = 1
     method            = "GET"
-    name              = "public.aks.jenkins.io"
+    name              = "public.publick8s.jenkins.io"
     path              = "/"
     threshold         = 1
     timeout           = 5000
@@ -306,6 +306,6 @@ resource "fastly_service_vcl" "stories" {
 }
 
 resource "fastly_tls_subscription" "stories" {
-  domains = [for domain in fastly_service_vcl.stories.domain : domain.name]
+  domains               = [for domain in fastly_service_vcl.stories.domain : domain.name]
   certificate_authority = "lets-encrypt"
 }
