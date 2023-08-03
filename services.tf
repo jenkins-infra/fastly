@@ -39,6 +39,15 @@ resource "fastly_service_vcl" "jenkinsio" {
     window            = 2
   }
 
+  request_setting {
+    bypass_busy_wait = false
+    force_miss       = false
+    force_ssl        = true
+    max_stale_age    = 0
+    name             = "Force SSL"
+    timer_support    = false
+  }
+
   gzip {
     content_types = var.gzip_content_types
     extensions    = var.gzip_extensions
