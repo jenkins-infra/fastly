@@ -12,7 +12,6 @@ resource "fastly_service_vcl" "jenkinsio" {
     auto_loadbalance      = false
     between_bytes_timeout = 10000
     connect_timeout       = 1000
-    error_threshold       = 0
     first_byte_timeout    = 15000
     healthcheck           = "public.publick8s.jenkins.io"
     max_conn              = 200
@@ -111,7 +110,6 @@ resource "fastly_service_vcl" "pkg" {
     auto_loadbalance      = false
     between_bytes_timeout = 10000
     connect_timeout       = 1000
-    error_threshold       = 0
     first_byte_timeout    = 15000
     max_conn              = 200
     name                  = "pkg.origin.jenkins.io"
@@ -172,7 +170,6 @@ resource "fastly_service_vcl" "plugins" {
     auto_loadbalance      = false
     between_bytes_timeout = 10000
     connect_timeout       = 1000
-    error_threshold       = 0
     first_byte_timeout    = 15000
     healthcheck           = "plugins site"
     max_conn              = 200
@@ -250,7 +247,6 @@ resource "fastly_service_vcl" "stories" {
     auto_loadbalance      = false
     between_bytes_timeout = 10000
     connect_timeout       = 1000
-    error_threshold       = 0
     first_byte_timeout    = 15000
     healthcheck           = "stories site"
     max_conn              = 200
