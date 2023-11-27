@@ -333,12 +333,12 @@ resource "fastly_service_vcl" "contributors" {
     first_byte_timeout    = 15000
     healthcheck           = "contributors site"
     max_conn              = 200
-    name                  = "jenkins-is-the-way.netlify.app"
-    override_host         = "jenkins-is-the-way.netlify.app"
+    name                  = "contributors.origin.jenkins.io"
+    override_host         = "contributors.origin.jenkins.io"
     port                  = 443
-    ssl_cert_hostname     = "jenkins-is-the-way.netlify.app"
+    ssl_cert_hostname     = "contributors.origin.jenkins.io"
     ssl_check_cert        = true
-    ssl_sni_hostname      = "jenkins-is-the-way.netlify.app"
+    ssl_sni_hostname      = "contributors.origin.jenkins.io"
     use_ssl               = true
     weight                = 100
   }
