@@ -94,6 +94,24 @@ resource "fastly_service_vcl" "jenkinsio" {
     priority = 100
     type     = "recv"
   }
+
+  # Requires authentication for purge requests
+  condition {
+    name      = "Purge"
+    priority  = 10
+    statement = "req.request == \"FASTLYPURGE\""
+    type      = "REQUEST"
+  }
+  header {
+    action            = "set"
+    destination       = "http.Fastly-Purge-Requires-Auth"
+    ignore_if_set     = false
+    name              = "Fastly Purge"
+    priority          = 10
+    request_condition = "Purge"
+    source            = "\"1\""
+    type              = "request"
+  }
 }
 
 # pkg.jenkins.io
@@ -154,6 +172,24 @@ resource "fastly_service_vcl" "pkg" {
     priority      = 100
     source        = "\"max-age=300\""
     type          = "response"
+  }
+
+  # Requires authentication for purge requests
+  condition {
+    name      = "Purge"
+    priority  = 10
+    statement = "req.request == \"FASTLYPURGE\""
+    type      = "REQUEST"
+  }
+  header {
+    action            = "set"
+    destination       = "http.Fastly-Purge-Requires-Auth"
+    ignore_if_set     = false
+    name              = "Fastly Purge"
+    priority          = 10
+    request_condition = "Purge"
+    source            = "\"1\""
+    type              = "request"
   }
 }
 
@@ -229,6 +265,24 @@ resource "fastly_service_vcl" "plugins" {
     priority      = 100
     source        = "\"max-age=31557600\""
     type          = "response"
+  }
+
+  # Requires authentication for purge requests
+  condition {
+    name      = "Purge"
+    priority  = 10
+    statement = "req.request == \"FASTLYPURGE\""
+    type      = "REQUEST"
+  }
+  header {
+    action            = "set"
+    destination       = "http.Fastly-Purge-Requires-Auth"
+    ignore_if_set     = false
+    name              = "Fastly Purge"
+    priority          = 10
+    request_condition = "Purge"
+    source            = "\"1\""
+    type              = "request"
   }
 }
 
@@ -307,6 +361,24 @@ resource "fastly_service_vcl" "stories" {
     priority      = 100
     source        = "\"max-age=31557600\""
     type          = "response"
+  }
+
+  # Requires authentication for purge requests
+  condition {
+    name      = "Purge"
+    priority  = 10
+    statement = "req.request == \"FASTLYPURGE\""
+    type      = "REQUEST"
+  }
+  header {
+    action            = "set"
+    destination       = "http.Fastly-Purge-Requires-Auth"
+    ignore_if_set     = false
+    name              = "Fastly Purge"
+    priority          = 10
+    request_condition = "Purge"
+    source            = "\"1\""
+    type              = "request"
   }
 }
 
@@ -391,6 +463,24 @@ resource "fastly_service_vcl" "contributors" {
     source        = "\"max-age=31557600\""
     type          = "response"
   }
+
+  # Requires authentication for purge requests
+  condition {
+    name      = "Purge"
+    priority  = 10
+    statement = "req.request == \"FASTLYPURGE\""
+    type      = "REQUEST"
+  }
+  header {
+    action            = "set"
+    destination       = "http.Fastly-Purge-Requires-Auth"
+    ignore_if_set     = false
+    name              = "Fastly Purge"
+    priority          = 10
+    request_condition = "Purge"
+    source            = "\"1\""
+    type              = "request"
+  }
 }
 
 resource "fastly_tls_subscription" "contributors" {
@@ -473,6 +563,24 @@ resource "fastly_service_vcl" "docs" {
     priority      = 100
     source        = "\"max-age=31557600\""
     type          = "response"
+  }
+
+  # Requires authentication for purge requests
+  condition {
+    name      = "Purge"
+    priority  = 10
+    statement = "req.request == \"FASTLYPURGE\""
+    type      = "REQUEST"
+  }
+  header {
+    action            = "set"
+    destination       = "http.Fastly-Purge-Requires-Auth"
+    ignore_if_set     = false
+    name              = "Fastly Purge"
+    priority          = 10
+    request_condition = "Purge"
+    source            = "\"1\""
+    type              = "request"
   }
 }
 
