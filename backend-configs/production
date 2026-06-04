@@ -1,0 +1,5 @@
+resource_group_name  = "tf-remote-state-fastly-production-he3uyq"
+storage_account_name = "fastlyproductionhe3uyq"
+container_name       = "fastlyproductionhe3uyq"
+client_id            = "7fd8e332-4fe0-474c-a94e-ea3fc9389354"
+# client_secret      = "" # Specified through the env. variable $TF_BACKEND_ARM_CLIENT_SECRET

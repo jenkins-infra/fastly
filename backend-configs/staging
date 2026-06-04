@@ -1,0 +1,5 @@
+resource_group_name  = "tf-remote-state-fastly-staging-D4LpT5"
+storage_account_name = "fastlystagingd4lpt5"
+container_name       = "fastlystagingd4lpt5"
+client_id            = "6a12677a-06ab-4adf-8077-a14f66f7290a"
+# client_secret      = "" # Specified through the env. variable $TF_BACKEND_ARM_CLIENT_SECRET
